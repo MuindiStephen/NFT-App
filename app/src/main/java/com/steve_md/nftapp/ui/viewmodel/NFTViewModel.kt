@@ -47,9 +47,11 @@ class NFTViewModel @Inject constructor(
             nftList.add(NftData.Featured(FEATURED_IMAGE, FEATURED_IMAGE_TITLE))
             nftList.add(NftData.Title(2,"Top Pick", "View all"))
             nftList.addAll(topNft.value)
-            nftList.add(NftData.Title(3, "Trending", ""))
-            nftList.add(NftData.Title(4, "", ""))
+            nftList.add(NftData.Title(2, "Trending", ""))
             nftList.addAll(trendingNft.value)
+            _nft.emit(Resource.Success(nftList))
+        } else {
+            Resource.Failure(false, null, null)
         }
 
     }
