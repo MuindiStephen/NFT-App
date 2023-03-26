@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Stephen Muindi @2023
+ */
+
 package com.steve_md.nftapp
 
 import androidx.appcompat.app.AppCompatActivity
