@@ -84,4 +84,7 @@ dependencies {
 
     //gson converter
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 }

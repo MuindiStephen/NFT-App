@@ -4,6 +4,8 @@
 
 package com.steve_md.nftapp.network
 
-interface NftApiService{
+import retrofit2.http.GET
 
+interface NftApiService{
+    //@GET()
 }
