@@ -4,6 +4,6 @@
 
 package com.steve_md.nftapp.network
 
-interface ApiService {
-    
+interface NftApiService{
+
 }

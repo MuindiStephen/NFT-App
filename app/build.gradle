@@ -1,16 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 android {
     namespace 'com.steve_md.nftapp'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.steve_md.nftapp"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -30,15 +33,55 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    def coil_version = "2.0.0-rc01"
+    def retrofit_version = "2.9.0"
+
+    def lottie_version = "5.2.0"
+    def hilt_version = "2.44"
+    def lifecycle_version = "2.6.0"
+    def fragment_ext_version = "1.5.6"
+    def logging_interceptor_version = "5.0.0-alpha.1"
+
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //coil
+    implementation "io.coil-kt:coil:$coil_version"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    //lottie
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //lifecycle aware
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    //by viewModels
+    implementation "androidx.fragment:fragment-ktx:$fragment_ext_version"
+
+    //runtime
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    //logging interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
+    //gson converter
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 }
