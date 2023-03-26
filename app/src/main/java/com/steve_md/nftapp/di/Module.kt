@@ -5,6 +5,8 @@
 package com.steve_md.nftapp.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.steve_md.nftapp.network.ApiDataSource
+import com.steve_md.nftapp.network.NftApiService
 import com.steve_md.nftapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -42,5 +44,13 @@ class Module  {
             .build()
     }
 
+    @Provides
+    @Singleton
+    fun providesNftApiService(retrofit: Retrofit) : NftApiService =
+        retrofit.create(NftApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun providesApiDataSource(apiService: NftApiService) = ApiDataSource(apiService)
 
 }
