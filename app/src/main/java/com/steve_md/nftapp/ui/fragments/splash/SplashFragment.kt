@@ -46,4 +46,3 @@ class SplashFragment : Fragment() {
 
 
 
-}
