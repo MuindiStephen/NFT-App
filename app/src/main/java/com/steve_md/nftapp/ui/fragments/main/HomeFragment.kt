@@ -9,32 +9,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.steve_md.nftapp.R
-import com.steve_md.nftapp.databinding.FragmentIntro1Binding
+import com.steve_md.nftapp.databinding.FragmentHomeBinding
 
+class HomeFragment : Fragment() {
 
-class IntroFragment1 : Fragment() {
-
-    private lateinit var binding: FragmentIntro1Binding
-
+    private lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+        binding = FragmentHomeBinding.inflate(
+            inflater,container,false
+        )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpBinding()
-    }
 
-    private fun setUpBinding() {
-        binding.buttonStart.setOnClickListener {
-            findNavController().navigate(R.id.action_introFragment1_to_introFragment2)
-        }
     }
-
 }
