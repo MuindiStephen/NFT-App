@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/nav_graph">
+<!--
+  ~ Copyright (c) Stephen Muindi @2023
+  -->
 
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.steve_md.nftapp.ui.fragments.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_introFragment1"
+            app:destination="@id/introFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/introFragment2"
+        android:name="com.steve_md.nftapp.ui.fragments.main.IntroFragment2"
+        android:label="fragment_intro2"
+        tools:layout="@layout/fragment_intro2" />
+    <fragment
+        android:id="@+id/introFragment1"
+        android:name="com.steve_md.nftapp.ui.fragments.main.IntroFragment1"
+        android:label="fragment_intro1"
+        tools:layout="@layout/fragment_intro1" >
+        <action
+            android:id="@+id/action_introFragment1_to_introFragment2"
+            app:destination="@id/introFragment2" />
+    </fragment>
 </navigation>

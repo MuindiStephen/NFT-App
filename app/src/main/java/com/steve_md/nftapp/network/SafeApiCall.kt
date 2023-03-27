@@ -25,7 +25,4 @@ interface SafeApiCall {
             }
         }
     }
-
-
-
 }
