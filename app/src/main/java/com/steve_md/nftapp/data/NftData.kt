@@ -4,6 +4,7 @@
 
 package com.steve_md.nftapp.data
 
+
 sealed class NftData {
 
     class Title(
