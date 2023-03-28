@@ -52,7 +52,7 @@ class NftMultipleViewAdapter : ListAdapter<NftData, NftMultipleViewHolder>(NftCa
 
     }
 
-    private val itemClickListener:((view:View, item:NftData, position:Int) -> Unit)? = null
+     var itemClickListener:((view:View, item:NftData, position:Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NftMultipleViewHolder {
         return when(viewType){
