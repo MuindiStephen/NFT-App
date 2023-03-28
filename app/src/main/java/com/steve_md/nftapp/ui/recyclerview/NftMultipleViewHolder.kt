@@ -38,8 +38,8 @@ sealed class NftMultipleViewHolder(binding: ViewBinding) : RecyclerView.ViewHold
                 crossfade(true)
                 transformations(RoundedCornersTransformation(20F))
             }
-            binding.imgFeatured.setOnClickListener {
-                itemClickListener?.invoke(it, featured, adapterPosition)
+            binding.imgFeatured.setOnClickListener { view ->
+                itemClickListener?.invoke(view, featured, adapterPosition)
             }
             binding.txtFeaturedTitle.text = FEATURED_IMAGE_TITLE
         }

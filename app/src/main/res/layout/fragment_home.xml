@@ -9,7 +9,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_purple"
     tools:context=".ui.fragments.main.HomeFragment">
 
 
@@ -17,7 +16,7 @@
         android:id="@+id/nftRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +27,7 @@
         android:id="@+id/imageViewAlert"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:visibility="gone"
         android:src="@drawable/ic_baseline_report_problem_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:visibility="gone"
         android:fontFamily="@font/poppins_regular"
         android:text="@string/whoops_a_problem_has_been_encountered"
         android:textColor="@color/white"
@@ -59,6 +60,7 @@
         android:fontFamily="@font/poppins_regular"
         android:textColor="@color/white"
         android:textSize="12sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewAlert_1" />

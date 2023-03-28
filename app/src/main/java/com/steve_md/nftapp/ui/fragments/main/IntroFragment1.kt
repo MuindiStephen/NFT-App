@@ -23,6 +23,7 @@ class IntroFragment1 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+        binding = FragmentIntro1Binding.inflate(inflater,container,false)
         return binding.root
     }
 

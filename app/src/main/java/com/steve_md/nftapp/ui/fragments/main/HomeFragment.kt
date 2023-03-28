@@ -23,8 +23,10 @@ import com.steve_md.nftapp.network.Resource
 import com.steve_md.nftapp.ui.recyclerview.NftMultipleViewAdapter
 import com.steve_md.nftapp.ui.viewmodel.NFTViewModel
 import com.steve_md.nftapp.utils.ExtensionFunctions.changeVisibility
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
@@ -82,17 +84,17 @@ class HomeFragment : Fragment() {
                     when (results) {
                         Resource.Loading ->  Toast.makeText(requireContext(), "Loading....",Toast.LENGTH_SHORT).show()
                         is Resource.Failure -> {
-                            binding.imageViewAlert.visibility = View.VISIBLE
-                            binding.textViewAlert1.visibility = View.VISIBLE
-                            binding.textViewAlert2.visibility = View.VISIBLE
+//                            binding.imageViewAlert.visibility = View.VISIBLE
+//                            binding.textViewAlert1.visibility = View.VISIBLE
+//                            binding.textViewAlert2.visibility = View.VISIBLE
                         }
                         is Resource.Success -> {
-                            binding.imageViewAlert.visibility = View.INVISIBLE
-                            binding.textViewAlert1.visibility = View.INVISIBLE
-                            binding.textViewAlert2.visibility = View.INVISIBLE
+//                            binding.imageViewAlert.visibility = View.INVISIBLE
+//                            binding.textViewAlert1.visibility = View.INVISIBLE
+//                            binding.textViewAlert2.visibility = View.INVISIBLE
+                            Toast.makeText(requireContext(), "Data fetched successfully",Toast.LENGTH_SHORT).show()
                             nftMultipleViewAdapter.submitList(results.value)
                         }
-                        else -> {}
                     }
 
                 }
