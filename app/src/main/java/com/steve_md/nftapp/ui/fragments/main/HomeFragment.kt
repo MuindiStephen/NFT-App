@@ -23,8 +23,10 @@ import com.steve_md.nftapp.network.Resource
 import com.steve_md.nftapp.ui.recyclerview.NftMultipleViewAdapter
 import com.steve_md.nftapp.ui.viewmodel.NFTViewModel
 import com.steve_md.nftapp.utils.ExtensionFunctions.changeVisibility
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
