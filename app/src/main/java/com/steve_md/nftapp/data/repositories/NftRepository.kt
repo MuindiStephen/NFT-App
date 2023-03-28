@@ -11,6 +11,6 @@ import javax.inject.Inject
 class NftRepository @Inject constructor(
     private val dataSource: ApiDataSource
 ) : SafeApiCall {
-     suspend fun getTopNft() = safeApiCall { dataSource.getTopNft() }
+    suspend fun getTopNft() = safeApiCall { dataSource.getTopNft() }
     suspend fun getTrendingNft() = safeApiCall { dataSource.getTrendingNft() }
 }
