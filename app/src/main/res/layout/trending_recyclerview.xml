@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Stephen Muindi @2023
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:id="@+id/topNftLayout"
+    android:background="@color/dark_purple">
+
+    <ImageView
+        android:id="@+id/img_trending"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/nft_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_nft_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/txt_category"
+        app:layout_constraintStart_toEndOf="@+id/img_trending"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Bored ape yatch club" />
+
+
+    <TextView
+        android:id="@+id/txt_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_nft_title"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nft_title"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Arts and gallery" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
