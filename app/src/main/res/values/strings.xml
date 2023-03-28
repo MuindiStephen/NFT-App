@@ -2,7 +2,6 @@
     <string name="app_name">NFT App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="null">null</string>
     <string name="start">Start</string>
     <string name="digital_arts">Digital Arts</string>
     <string name="collect_and_sell">Collect and Sell</string>
@@ -10,7 +9,6 @@
     <string name="nft">nft</string>
     <string name="line">line</string>
     <string name="find_your_best_nft_market">Find your Best NFT Market</string>
-    <string name="continue">Continue</string>
     <string name="next">Next</string>
     <string name="featured">featured</string>
     <string name="bored_ape">Bored Ape</string>
