@@ -25,8 +25,7 @@ class NFTViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _nft = MutableStateFlow<Resource<List<NftData>>>(Resource.Loading)
-    val nft:StateFlow<Resource<List<NftData>>>
-    get() = _nft
+    val nft:StateFlow<Resource<List<NftData>>> = _nft
 
     init {
         getNft()

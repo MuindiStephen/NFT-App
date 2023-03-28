@@ -6,12 +6,13 @@ package com.steve_md.nftapp.network
 
 import com.steve_md.nftapp.data.NftData
 import com.steve_md.nftapp.utils.Constants.TOP_NFT
+import com.steve_md.nftapp.utils.Constants.TRENDING_NFT
 import retrofit2.http.GET
 
 interface NftApiService{
     @GET(TOP_NFT)
     suspend fun getTopNft() : List<NftData.Top>
 
-    @GET()
+    @GET(TRENDING_NFT)
     suspend fun getTrendingNft(): List<NftData.Trending>
 }

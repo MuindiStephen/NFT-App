@@ -31,7 +31,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
-    private val nftMultipleViewAdapter by lazy { NftMultipleViewAdapter() }
+    //private val nftMultipleViewAdapter by lazy { NftMultipleViewAdapter() }
+    private val nftMultipleViewAdapter = NftMultipleViewAdapter()
     private val nftViewModel: NFTViewModel by viewModels()
 
     override fun onCreateView(
@@ -52,8 +53,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpRecyclerView() {
-        binding.rcvNft.apply {
-            val gridLayoutManager = GridLayoutManager(requireActivity(), 2)
+
+        binding.nftRecyclerView.apply {
+            val gridLayoutManager = GridLayoutManager(requireContext(), 2)
             gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                 override fun getSpanSize(position: Int): Int {
                     return when (nftMultipleViewAdapter.getItemViewType(position)) {
@@ -68,31 +70,33 @@ class HomeFragment : Fragment() {
 
             layoutManager = gridLayoutManager
             setHasFixedSize(true)
-            adapter = nftMultipleViewAdapter
+             adapter = nftMultipleViewAdapter
+            //binding.nftRecyclerView.adapter = nftMultipleViewAdapter
 
         }
 
         nftMultipleViewAdapter.itemClickListener = { view, item, position ->
             when(item) {
-                is NftData.Title -> Toast.makeText(requireActivity(), "", Toast.LENGTH_SHORT).show()
-                is NftData.Featured -> Toast.makeText(requireContext(), "", Toast.LENGTH_SHORT).show()
-                is NftData.Top -> Toast.makeText(requireContext(), "", Toast.LENGTH_SHORT).show()
-                is NftData.Trending -> Toast.makeText(requireContext(), "", Toast.LENGTH_SHORT).show()
+                is NftData.Title -> Toast.makeText(requireActivity(), "title", Toast.LENGTH_SHORT).show()
+                is NftData.Featured -> Toast.makeText(requireContext(), "featured", Toast.LENGTH_SHORT).show()
+                is NftData.Top -> Toast.makeText(requireContext(), "top", Toast.LENGTH_SHORT).show()
+                is NftData.Trending -> Toast.makeText(requireContext(), "trending", Toast.LENGTH_SHORT).show()
             }
-
         }
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 nftViewModel.nft.collect{ results ->
                     when (results) {
-                        Resource.Loading ->  Toast.makeText(requireContext(), "Loading....",Toast.LENGTH_SHORT).show()
+                        is Resource.Loading ->  Toast.makeText(requireContext(), "Loading....",Toast.LENGTH_SHORT).show()
                         is Resource.Failure -> {
+                            binding.nftRecyclerView.visibility = View.INVISIBLE
 //                            binding.imageViewAlert.visibility = View.VISIBLE
 //                            binding.textViewAlert1.visibility = View.VISIBLE
 //                            binding.textViewAlert2.visibility = View.VISIBLE
                         }
                         is Resource.Success -> {
+                            binding.nftRecyclerView.visibility = View.VISIBLE
 //                            binding.imageViewAlert.visibility = View.INVISIBLE
 //                            binding.textViewAlert1.visibility = View.INVISIBLE
 //                            binding.textViewAlert2.visibility = View.INVISIBLE
