@@ -17,4 +17,5 @@
     <string name="please_try_again">Please try again</string>
     <string name="whoops_a_problem_has_been_encountered">Whoops! A problem has been encountered</string>
     <string name="alert">alert</string>
+    <string name="search">Search...</string>
 </resources>

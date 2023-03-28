@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpRecyclerView() {
-        binding.nftRecyclerView.apply {
+        binding.rcvNft.apply {
             val gridLayoutManager = GridLayoutManager(requireActivity(), 2)
             gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                 override fun getSpanSize(position: Int): Int {
@@ -65,10 +65,14 @@ class HomeFragment : Fragment() {
                     }
                 }
             }
+
+            layoutManager = gridLayoutManager
+            setHasFixedSize(true)
+            adapter = nftMultipleViewAdapter
+
         }
 
         nftMultipleViewAdapter.itemClickListener = { view, item, position ->
-
             when(item) {
                 is NftData.Title -> Toast.makeText(requireActivity(), "", Toast.LENGTH_SHORT).show()
                 is NftData.Featured -> Toast.makeText(requireContext(), "", Toast.LENGTH_SHORT).show()
@@ -94,6 +98,7 @@ class HomeFragment : Fragment() {
 //                            binding.textViewAlert2.visibility = View.INVISIBLE
                             Toast.makeText(requireContext(), "Data fetched successfully",Toast.LENGTH_SHORT).show()
                             nftMultipleViewAdapter.submitList(results.value)
+                            //binding.nftRecyclerView.adapter = nftMultipleViewAdapter
                         }
                     }
 
